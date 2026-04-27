@@ -82,13 +82,13 @@ export function FeaturedRoomsSection() {
         <div className="relative mt-4">
           <button
             aria-label="Trước"
-            className="absolute top-1/2 left-[-8px] z-10 hidden size-11 -translate-y-1/2 place-items-center rounded-full border border-border bg-card text-primary shadow-[0_2px_8px_rgba(21,74,171,0.08)] transition hover:bg-secondary 2xl:grid"
+            className="absolute top-1/2 left-[-20px] z-10 hidden size-11 -translate-y-1/2 place-items-center rounded-full border border-border bg-card text-primary shadow-[0_2px_8px_rgba(21,74,171,0.08)] transition hover:bg-secondary 2xl:grid"
           >
             <ChevronLeft className="size-5" />
           </button>
           <button
             aria-label="Tiếp theo"
-            className="absolute top-1/2 right-[-8px] z-10 hidden size-11 -translate-y-1/2 place-items-center rounded-full border border-border bg-card text-primary shadow-[0_2px_8px_rgba(21,74,171,0.08)] transition hover:bg-secondary 2xl:grid"
+            className="absolute top-1/2 right-[-20px]  z-10 hidden size-11 -translate-y-1/2 place-items-center rounded-full border border-border bg-card text-primary shadow-[0_2px_8px_rgba(21,74,171,0.08)] transition hover:bg-secondary 2xl:grid"
           >
             <ChevronRight className="size-5" />
           </button>
