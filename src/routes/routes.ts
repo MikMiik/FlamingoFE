@@ -20,7 +20,7 @@ export type RoutePath = string;
 
 export const navItems = [
   { label: "Trang chủ", href: "/" },
-  { label: "Phòng & Villa", href: "/rooms" },
+  { label: "Phòng", href: "/rooms" },
   { label: "Ưu đãi", href: "/offer" },
   { label: "Cẩm nang", href: "/blog" },
   { label: "Liên hệ", href: "/contact" },

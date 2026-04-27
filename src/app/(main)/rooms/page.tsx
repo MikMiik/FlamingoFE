@@ -22,7 +22,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { routes } from "@/routes/routes";
 
 const breadcrumbItems = [
-  { label: "Phòng & Villa", href: routes.rooms },
+  { label: "Phòng", href: routes.rooms },
   { label: "Căn hộ" },
 ];
 

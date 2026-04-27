@@ -144,7 +144,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 <Breadcrumb
   items={[
     { label: "Trang chủ", href: routes.home },
-    { label: "Phòng & Villa", href: routes.rooms },
+    { label: "Phòng", href: routes.rooms },
     { label: "IB 1526" },
   ]}
 />;

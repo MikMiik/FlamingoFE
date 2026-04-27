@@ -161,7 +161,7 @@ export type RoutePath = Routes[keyof Routes];
 
 export const navItems = [
   { label: "Trang chủ", href: routes.home },
-  { label: "Phòng & Villa", href: routes.rooms },
+  { label: "Phòng", href: routes.rooms },
   { label: "Ưu đãi", href: routes.offers },
   { label: "Cẩm nang", href: routes.blog },
   { label: "Liên hệ", href: routes.contact },

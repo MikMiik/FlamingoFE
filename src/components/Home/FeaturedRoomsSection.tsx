@@ -72,7 +72,7 @@ export function FeaturedRoomsSection() {
     <section>
       <Container className="mt-7">
         <SectionTitle
-          title="Khám phá phòng & villa nổi bật"
+          title="Khám phá Phòng nổi bật"
           action="Xem tất cả"
           actionHref={routes.rooms}
         />
@@ -150,4 +150,3 @@ export function FeaturedRoomsSection() {
     </section>
   );
 }
-

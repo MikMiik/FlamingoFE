@@ -31,7 +31,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { routes } from "@/routes/routes";
 
 const breadcrumbItems = [
-  { label: "Phòng & Villa", href: routes.rooms },
+  { label: "Phòng", href: routes.rooms },
   { label: "Căn hộ", href: routes.rooms },
   { label: "IB 1526 - Flamingo Hải Tiến" },
 ];
@@ -75,7 +75,11 @@ const tabs = [
 ];
 
 const guaranteeItems = [
-  { icon: CalendarDays, title: "Thanh toán linh hoạt", description: "Nhiều phương thức" },
+  {
+    icon: CalendarDays,
+    title: "Thanh toán linh hoạt",
+    description: "Nhiều phương thức",
+  },
   { icon: ShieldCheck, title: "Hủy miễn phí", description: "Trước 7 ngày" },
   { icon: Star, title: "Đảm bảo giá tốt", description: "Cam kết giá tốt nhất" },
 ];
@@ -91,12 +95,14 @@ const reviews = [
   {
     name: "Nguyễn Minh Anh",
     location: "Hà Nội",
-    comment: "Phòng rất mới, view biển thoáng và đúng như hình. Ban công rộng, buổi sáng ngắm bình minh rất đẹp.",
+    comment:
+      "Phòng rất mới, view biển thoáng và đúng như hình. Ban công rộng, buổi sáng ngắm bình minh rất đẹp.",
   },
   {
     name: "Trần Hoàng Nam",
     location: "TP. Hồ Chí Minh",
-    comment: "Check-in nhanh, căn hộ sạch sẽ, giường êm. Gia đình mình đặc biệt thích khu bếp và bàn ăn.",
+    comment:
+      "Check-in nhanh, căn hộ sạch sẽ, giường êm. Gia đình mình đặc biệt thích khu bếp và bàn ăn.",
   },
 ];
 
@@ -225,8 +231,9 @@ export default function RoomDetailPage() {
                 Mô tả phòng
               </h2>
               <p className="mt-3 max-w-[860px] text-base leading-7 text-muted-foreground">
-                Căn hộ IB 1526 sở hữu view biển trực diện tuyệt đẹp, thiết kế hiện đại,
-                ban công rộng rãi mang đến không gian nghỉ dưỡng thoải mái và sang trọng.
+                Căn hộ IB 1526 sở hữu view biển trực diện tuyệt đẹp, thiết kế
+                hiện đại, ban công rộng rãi mang đến không gian nghỉ dưỡng thoải
+                mái và sang trọng.
               </p>
               <div className="mt-5 flex flex-wrap gap-2.5">
                 {detailFacts.map((item) => {
@@ -273,7 +280,10 @@ export default function RoomDetailPage() {
               <div className="mt-5 rounded-lg border border-border bg-card p-5 shadow-[0_2px_12px_rgba(25,79,170,0.04)]">
                 <div className="space-y-3.5">
                   {policyItems.map((item) => (
-                    <div key={item} className="flex items-start gap-3 text-[15px] leading-7 text-muted-foreground">
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 text-[15px] leading-7 text-muted-foreground"
+                    >
                       <CircleCheckBig className="mt-1 size-4 shrink-0 text-primary" />
                       {item}
                     </div>
@@ -293,14 +303,15 @@ export default function RoomDetailPage() {
                     Khu nghỉ dưỡng Flamingo Hải Tiến, Hoằng Hóa, Thanh Hóa
                   </p>
                   <p className="mt-3 text-[15px] leading-7 text-muted-foreground">
-                    Căn hộ nằm gần bãi biển riêng, hồ bơi trung tâm, nhà hàng và khu vui chơi.
-                    Từ đây có thể dễ dàng di chuyển tới chợ hải sản, quảng trường biển và các
-                    điểm check-in nổi bật của Hải Tiến.
+                    Căn hộ nằm gần bãi biển riêng, hồ bơi trung tâm, nhà hàng và
+                    khu vui chơi. Từ đây có thể dễ dàng di chuyển tới chợ hải
+                    sản, quảng trường biển và các điểm check-in nổi bật của Hải
+                    Tiến.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2.5">
                     <span className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1.5 text-sm font-medium text-foreground">
-                      <MapPinned className="size-4 text-primary" />
-                      2 phút ra biển
+                      <MapPinned className="size-4 text-primary" />2 phút ra
+                      biển
                     </span>
                     <span className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1.5 text-sm font-medium text-foreground">
                       <CarFront className="size-4 text-primary" />
@@ -311,10 +322,12 @@ export default function RoomDetailPage() {
                 <div className="rounded-lg border border-border bg-linear-to-br from-secondary/50 to-background p-5 shadow-[0_2px_12px_rgba(25,79,170,0.04)]">
                   <div className="flex h-full min-h-[220px] flex-col justify-between rounded-xl border border-dashed border-border bg-card/70 p-5">
                     <div>
-                      <p className="text-lg font-semibold text-foreground">Bản đồ khu vực</p>
+                      <p className="text-lg font-semibold text-foreground">
+                        Bản đồ khu vực
+                      </p>
                       <p className="mt-2 text-[15px] leading-7 text-muted-foreground">
-                        Từ căn hộ, bạn có thể đi bộ tới bãi biển, hồ bơi và khu tiện ích trong nội
-                        khu Flamingo Hải Tiến.
+                        Từ căn hộ, bạn có thể đi bộ tới bãi biển, hồ bơi và khu
+                        tiện ích trong nội khu Flamingo Hải Tiến.
                       </p>
                     </div>
                     <div className="flex items-center gap-2 text-[15px] font-medium text-primary">
@@ -333,13 +346,17 @@ export default function RoomDetailPage() {
               </h2>
               <div className="mt-5 grid gap-4 lg:grid-cols-[220px_minmax(0,1fr)]">
                 <div className="rounded-lg border border-border bg-card p-5 text-center shadow-[0_2px_12px_rgba(25,79,170,0.04)]">
-                  <p className="text-[42px] font-extrabold leading-none text-foreground">4.9</p>
+                  <p className="text-[42px] font-extrabold leading-none text-foreground">
+                    4.9
+                  </p>
                   <div className="mt-3 flex items-center justify-center gap-1 text-amber-400">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <Star key={index} className="size-4 fill-current" />
                     ))}
                   </div>
-                  <p className="mt-3 text-[15px] text-muted-foreground">120 đánh giá đã xác minh</p>
+                  <p className="mt-3 text-[15px] text-muted-foreground">
+                    120 đánh giá đã xác minh
+                  </p>
                 </div>
                 <div className="grid gap-4">
                   {reviews.map((review) => (
@@ -349,8 +366,12 @@ export default function RoomDetailPage() {
                     >
                       <div className="flex flex-wrap items-center justify-between gap-3">
                         <div>
-                          <h3 className="text-[17px] font-semibold text-foreground">{review.name}</h3>
-                          <p className="text-sm text-muted-foreground">{review.location}</p>
+                          <h3 className="text-[17px] font-semibold text-foreground">
+                            {review.name}
+                          </h3>
+                          <p className="text-sm text-muted-foreground">
+                            {review.location}
+                          </p>
                         </div>
                         <div className="flex items-center gap-1 text-amber-400">
                           {Array.from({ length: 5 }).map((_, index) => (
@@ -358,7 +379,9 @@ export default function RoomDetailPage() {
                           ))}
                         </div>
                       </div>
-                      <p className="mt-3 text-[15px] leading-7 text-muted-foreground">{review.comment}</p>
+                      <p className="mt-3 text-[15px] leading-7 text-muted-foreground">
+                        {review.comment}
+                      </p>
                     </article>
                   ))}
                 </div>
@@ -373,9 +396,13 @@ export default function RoomDetailPage() {
                 <div>
                   <p className="text-[22px] font-extrabold text-primary">
                     1.650.000đ{" "}
-                    <span className="text-base font-medium text-muted-foreground">/ đêm</span>
+                    <span className="text-base font-medium text-muted-foreground">
+                      / đêm
+                    </span>
                   </p>
-                  <p className="mt-1 text-base text-muted-foreground line-through">1.950.000đ</p>
+                  <p className="mt-1 text-base text-muted-foreground line-through">
+                    1.950.000đ
+                  </p>
                   <p className="mt-2 text-[15px] font-medium text-emerald-600">
                     Giá tốt nhất hôm nay
                   </p>
@@ -387,21 +414,27 @@ export default function RoomDetailPage() {
 
               <div className="mt-5 space-y-3">
                 <div className="space-y-2">
-                  <label className="text-[15px] font-medium text-muted-foreground">Ngày nhận phòng</label>
+                  <label className="text-[15px] font-medium text-muted-foreground">
+                    Ngày nhận phòng
+                  </label>
                   <div className="flex h-12 items-center justify-between rounded-xl border border-border px-4 text-base text-foreground cursor-pointer hover:border-primary transition-colors">
                     <span>15/06/2024</span>
                     <CalendarDays className="size-4 text-primary/60" />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[15px] font-medium text-muted-foreground">Ngày trả phòng</label>
+                  <label className="text-[15px] font-medium text-muted-foreground">
+                    Ngày trả phòng
+                  </label>
                   <div className="flex h-12 items-center justify-between rounded-xl border border-border px-4 text-base text-foreground cursor-pointer hover:border-primary transition-colors">
                     <span>16/06/2024</span>
                     <CalendarDays className="size-4 text-primary/60" />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[15px] font-medium text-muted-foreground">Số khách</label>
+                  <label className="text-[15px] font-medium text-muted-foreground">
+                    Số khách
+                  </label>
                   <div className="flex h-12 items-center justify-between rounded-xl border border-border px-4 text-base text-foreground cursor-pointer hover:border-primary transition-colors">
                     <span>2 khách</span>
                     <ChevronRight className="size-4 rotate-90 text-primary/60" />
@@ -420,7 +453,9 @@ export default function RoomDetailPage() {
             </div>
 
             <div className="rounded-xl border border-border bg-card p-5 shadow-[0_4px_16px_rgba(25,79,170,0.07)]">
-              <p className="text-lg font-semibold text-muted-foreground">Bạn cần hỗ trợ?</p>
+              <p className="text-lg font-semibold text-muted-foreground">
+                Bạn cần hỗ trợ?
+              </p>
               <div className="mt-3 inline-flex items-center gap-3 text-lg font-bold text-foreground">
                 <Phone className="size-5 text-primary" />
                 0968 85 85 85
@@ -440,8 +475,12 @@ export default function RoomDetailPage() {
                         <Icon className="size-4" />
                       </div>
                       <div>
-                        <p className="text-base font-semibold text-foreground">{item.title}</p>
-                        <p className="mt-0.5 text-sm text-muted-foreground">{item.description}</p>
+                        <p className="text-base font-semibold text-foreground">
+                          {item.title}
+                        </p>
+                        <p className="mt-0.5 text-sm text-muted-foreground">
+                          {item.description}
+                        </p>
                       </div>
                     </div>
                   );
@@ -454,4 +493,3 @@ export default function RoomDetailPage() {
     </main>
   );
 }
-
