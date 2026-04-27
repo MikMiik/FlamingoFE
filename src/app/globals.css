@@ -77,7 +77,7 @@
   --ring: oklch(0.65 0.15 240);
 
   /* radius */
-  --radius: 0.75rem;
+  --radius: 0.55rem;
 
   /* glass sidebar */
   --sidebar: oklch(1 0 0 / 0.7);
@@ -94,48 +94,90 @@
 }
 
 /* =========================
-   🌙 DARK MODE (OPTIONAL)
+   🌙 DARK MODE — Ocean Night
+   
+   Triết lý: "Biển đêm yên tĩnh"
+   ─────────────────────────────
+   Thay vì xanh lạnh thuần túy (hue 240),
+   dark mode dùng hue 220–230 (blue-teal ấm hơn)
+   với lightness trung bình 0.22–0.26 thay vì 0.18.
+   
+   Kết quả: nền đủ tối để đọc tốt ban đêm,
+   nhưng không gây cảm giác lạnh lẽo hay nặng nề.
+   Card và sidebar có độ trong suốt nhẹ để giữ
+   cảm giác "glass" đặc trưng của web resort.
 ========================= */
 .dark {
-  --background: oklch(0.18 0.02 240);
-  --foreground: oklch(0.95 0.02 240);
+  /* 
+    Nền: xanh đêm đậm, hue 222 (ấm hơn 240)
+    Không dùng pure dark vì web resort cần "không khí"
+  */
+  --background: oklch(0.22 0.025 222);
+  --foreground: oklch(0.93 0.015 210);
 
-  --card: oklch(0.22 0.02 240 / 0.8);
-  --card-foreground: oklch(0.95 0.02 240);
+  /*
+    Card: nhẹ hơn nền 1 bậc, có alpha để giữ glass effect
+    Tránh card quá trắng hoặc quá tối so với nền
+  */
+  --card: oklch(0.27 0.025 222 / 0.85);
+  --card-foreground: oklch(0.93 0.015 210);
 
-  --popover: oklch(0.22 0.02 240);
-  --popover-foreground: oklch(0.95 0.02 240);
+  --popover: oklch(0.26 0.025 222);
+  --popover-foreground: oklch(0.93 0.015 210);
 
-  --primary: oklch(0.75 0.15 240);
-  --primary-foreground: oklch(0.18 0.02 240);
+  /*
+    Primary: sáng hơn một chút so với light mode
+    để nổi bật trên nền tối, giữ hue 235 (ocean teal)
+  */
+  --primary: oklch(0.72 0.14 235);
+  --primary-foreground: oklch(0.18 0.02 235);
 
-  --secondary: oklch(0.3 0.03 240);
-  --secondary-foreground: oklch(0.95 0.02 240);
+  /*
+    Secondary: teal mờ, dùng cho badge và tag nhẹ
+  */
+  --secondary: oklch(0.32 0.04 225);
+  --secondary-foreground: oklch(0.88 0.02 210);
 
-  --muted: oklch(0.28 0.02 240);
-  --muted-foreground: oklch(0.7 0.02 240);
+  /*
+    Muted: nền placeholder, skeleton, disabled
+    Đủ tối để phân biệt nhưng không gắt
+  */
+  --muted: oklch(0.29 0.025 222);
+  --muted-foreground: oklch(0.65 0.02 215);
 
-  --accent: oklch(0.6 0.12 220);
-  --accent-foreground: oklch(0.95 0.02 240);
+  /*
+    Accent: teal sáng — dùng cho hover, CTA phụ, badge ưu đãi
+    Hue 195 (cyan-teal) tạo cảm giác "ánh sáng biển đêm"
+  */
+  --accent: oklch(0.62 0.13 195);
+  --accent-foreground: oklch(0.97 0.01 195);
 
-  --destructive: oklch(0.65 0.2 25);
+  --destructive: oklch(0.62 0.19 20);
 
-  --border: oklch(1 0 0 / 0.08);
-  --input: oklch(1 0 0 / 0.1);
+  /*
+    Border: rất nhẹ, không dùng full white
+    0.1 opacity giúp border không gắt trong dark mode
+  */
+  --border: oklch(1 0 0 / 0.1);
+  --input: oklch(1 0 0 / 0.08);
 
-  --ring: oklch(0.7 0.15 240);
+  --ring: oklch(0.72 0.14 235);
 
-  --sidebar: oklch(0.22 0.02 240);
-  --sidebar-foreground: oklch(0.95 0.02 240);
+  /*
+    Sidebar: tối hơn nền một chút để phân tách rõ
+    Giữ glass với alpha 0.6
+  */
+  --sidebar: oklch(0.2 0.025 222 / 0.85);
+  --sidebar-foreground: oklch(0.93 0.015 210);
 
-  --sidebar-primary: oklch(0.75 0.15 240);
-  --sidebar-primary-foreground: oklch(0.18 0.02 240);
+  --sidebar-primary: oklch(0.72 0.14 235);
+  --sidebar-primary-foreground: oklch(0.18 0.02 235);
 
-  --sidebar-accent: oklch(0.3 0.03 240);
-  --sidebar-accent-foreground: oklch(0.95 0.02 240);
+  --sidebar-accent: oklch(0.32 0.04 225);
+  --sidebar-accent-foreground: oklch(0.88 0.02 210);
 
   --sidebar-border: oklch(1 0 0 / 0.08);
-  --sidebar-ring: oklch(0.7 0.15 240);
+  --sidebar-ring: oklch(0.72 0.14 235);
 }
 
 /* =========================
@@ -152,6 +194,15 @@
       to bottom,
       rgba(0, 174, 239, 0.05),
       rgba(255, 255, 255, 1)
+    );
+  }
+
+  /* Dark mode: gradient gợi cảm giác biển đêm */
+  .dark body {
+    background-image: linear-gradient(
+      to bottom,
+      oklch(0.26 0.04 210 / 0.6),
+      oklch(0.22 0.025 222)
     );
   }
 
