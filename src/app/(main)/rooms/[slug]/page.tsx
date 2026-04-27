@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   Armchair,
   Bath,
@@ -442,9 +443,12 @@ export default function RoomDetailPage() {
                 </div>
               </div>
 
-              <button className="mt-5 flex h-12 w-full items-center justify-center rounded-xl bg-primary text-[17px] font-bold text-primary-foreground shadow-[0_4px_12px_rgba(29,99,232,0.15)] transition hover:bg-primary/90">
+              <Link
+                href={routes.booking}
+                className="mt-5 flex h-12 w-full items-center justify-center rounded-xl bg-primary text-[17px] font-bold text-primary-foreground shadow-[0_4px_12px_rgba(29,99,232,0.15)] transition hover:bg-primary/90"
+              >
                 Đặt phòng ngay
-              </button>
+              </Link>
 
               <div className="mt-4 flex items-center justify-center gap-2 text-[15px] text-muted-foreground">
                 <ShieldCheck className="size-4 text-primary" />

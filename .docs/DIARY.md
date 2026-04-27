@@ -4,6 +4,44 @@ Ghi lại các quyết định thiết kế, thay đổi quan trọng và bài h
 
 ---
 
+## [Session 6] — 2026-04-27 — Booking Workflow UI (No Online Payment)
+
+### Việc đã làm
+
+**1. Thiết kế flow đặt phòng theo phương án 1**
+- Tạo 5 page UI trong `(main)/booking` (chỉ UI, fake data):
+  - `booking/page.tsx` (Bước 1: thông tin lưu trú + thông tin liên hệ)
+  - `booking/review/page.tsx` (Bước 2: xác nhận + gửi yêu cầu)
+  - `booking/success/page.tsx` (thành công + mã đơn + trạng thái)
+  - `booking/lookup/page.tsx` (tra cứu đơn theo mã + số điện thoại)
+  - `booking/[code]/page.tsx` (chi tiết đơn + timeline trạng thái + hành động nhanh)
+
+**2. Tạo data fake chung cho booking**
+- Thêm `src/data/bookingMock.ts` để gom dữ liệu giả lập:
+  - thông tin phòng (`bookingRoom`)
+  - thông tin khách (`bookingCustomer`)
+  - thông tin request (`bookingRequest`)
+  - timeline trạng thái (`bookingTimeline`)
+
+**3. Cập nhật routes**
+- Thêm routes mới trong `src/routes/routes.ts`:
+  - `booking`, `bookingReview`, `bookingSuccess`, `bookingLookup`, `bookingDetail(code)`
+
+**4. Nối CTA từ room detail sang booking**
+- Trong `src/app/(main)/rooms/[slug]/page.tsx`, đổi nút `Đặt phòng ngay` thành `Link` tới `routes.booking`
+
+### Lỗi & Bài học
+
+| Vấn đề | Nguyên nhân | Fix |
+|--------|-------------|-----|
+| Dynamic page `booking/[code]` có thể match sai route tĩnh | Route động có thể trùng pattern nếu đặt sai | Giữ đầy đủ route tĩnh (`review`, `success`, `lookup`) riêng theo App Router, và route động chỉ dùng cho mã đơn |
+
+### Kiểm tra
+- `npx tsc --noEmit` → 0 errors ✅
+- `ReadLints` trên các file mới/chỉnh sửa → không lỗi ✅
+
+---
+
 ## [Session 5] — 2026-04-27 — Footer Cleanup, Remove Hex Classes, Reduce Radius
 
 ### Việc đã làm

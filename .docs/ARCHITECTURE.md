@@ -30,7 +30,14 @@ src/
 │   └── (main)/               ← Route group: shares Navbar + Footer layout
 │       ├── layout.tsx        ← Injects Navbar + Footer (no <main> wrapper)
 │       ├── page.tsx          ← Home page
+│       ├── booking/
+│       │   ├── page.tsx      ← Booking step 1 (stay + contact info)
+│       │   ├── review/page.tsx ← Booking step 2 (review + submit request)
+│       │   ├── success/page.tsx ← Booking success status
+│       │   ├── lookup/page.tsx ← Booking lookup form
+│       │   └── [code]/page.tsx ← Booking order detail + timeline
 │       ├── blog/page.tsx     ← Blog listing
+│       ├── blog/[slug]/page.tsx ← Blog detail
 │       ├── contact/page.tsx  ← Contact page
 │       ├── offer/page.tsx    ← Offers page
 │       └── rooms/
@@ -65,6 +72,9 @@ src/
 │   └── Contact/
 │       └── ContactForm.tsx   ← Client (form state)
 │
+├── data/
+│   └── bookingMock.ts        ← Fake booking workflow data
+│
 ├── routes/
 │   └── routes.ts             ← All URL constants + navItems array
 │
@@ -91,7 +101,13 @@ src/
 | `/`                | `(main)/page.tsx`                    | Home                             |
 | `/rooms`           | `(main)/rooms/page.tsx`              | Room listing with filter sidebar |
 | `/rooms/[slug]`    | `(main)/rooms/[slug]/page.tsx`       | Room detail                      |
+| `/booking`         | `(main)/booking/page.tsx`            | Booking step 1                   |
+| `/booking/review`  | `(main)/booking/review/page.tsx`     | Booking step 2                   |
+| `/booking/success` | `(main)/booking/success/page.tsx`    | Booking success                  |
+| `/booking/lookup`  | `(main)/booking/lookup/page.tsx`     | Booking lookup                   |
+| `/booking/[code]`  | `(main)/booking/[code]/page.tsx`     | Booking order detail             |
 | `/offer`           | `(main)/offer/page.tsx`              | Offers listing                   |
+| `/blog/[slug]`     | `(main)/blog/[slug]/page.tsx`        | Blog detail                      |
 | `/login`           | `(auth)/login/page.tsx`              | Đăng nhập                        |
 | `/register`        | `(auth)/register/page.tsx`           | Đăng ký                          |
 | `/forgot-password` | `(auth)/forgot-password/page.tsx`    | Quên mật khẩu                    |
