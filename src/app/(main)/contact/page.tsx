@@ -8,6 +8,8 @@ const breadcrumbItems = [{ label: "Liên hệ" }];
 
 const heroImage =
   "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=80";
+const mapEmbedUrl =
+  "https://www.google.com/maps?q=Flamingo%20Hai%20Tien%20Thanh%20Hoa&output=embed";
 
 const contactCards = [
   { icon: Phone, title: "Hotline", primary: "0968 85 85 85", secondary: "Hỗ trợ 24/7" },
@@ -86,15 +88,16 @@ export default function ContactPage() {
 
               <div className="mt-4 overflow-hidden rounded-lg border border-border bg-card shadow-[0_2px_12px_rgba(25,79,170,0.04)]">
                 <div className="relative aspect-[1.95]">
-                  <Image
-                    src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1800&q=80"
-                    alt="Map Flamingo Hai Tien"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1279px) 100vw, 900px"
+                  <iframe
+                    src={mapEmbedUrl}
+                    title="Google Maps - Flamingo Hải Tiến"
+                    className="absolute inset-0 h-full w-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
                   />
-                  <div className="absolute inset-0 bg-white/10" />
-                  <div className="absolute top-[44%] left-[61%] inline-flex items-center gap-2 rounded-full bg-card px-3 py-2 text-sm font-semibold text-red-500 shadow-[0_4px_14px_rgba(0,0,0,0.10)]">
+                  <div className="pointer-events-none absolute inset-0 bg-background/10" />
+                  <div className="pointer-events-none absolute top-[44%] left-[61%] inline-flex items-center gap-2 rounded-full bg-card px-3 py-2 text-sm font-semibold text-red-500 shadow-[0_4px_14px_rgba(0,0,0,0.10)]">
                     <MapPin className="size-4 fill-current" />
                     Flamingo Hải Tiến
                   </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   CalendarDays,
   ChevronDown,
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { routes } from "@/routes/routes";
 
 const breadcrumbItems = [{ label: "Ưu đãi" }];
 
@@ -30,6 +32,7 @@ const filters = [
 
 const offers = [
   {
+    slug: "ib-1526",
     title: "Combo nghỉ dưỡng 2N1Đ",
     image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80",
     badge: "-30%",
@@ -42,6 +45,7 @@ const offers = [
     price: "1.990.000đ",
   },
   {
+    slug: "ib-1626",
     title: "Ưu đãi dài ngày - 3N2Đ",
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
     badge: "-25%",
@@ -54,6 +58,7 @@ const offers = [
     price: "3.150.000đ",
   },
   {
+    slug: "ib-1712",
     title: "Ưu đãi cuối tuần",
     image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80",
     badge: "-20%",
@@ -66,6 +71,7 @@ const offers = [
     price: "1.600.000đ",
   },
   {
+    slug: "ib-1806",
     title: "Ưu đãi trong ngày",
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
     badge: "-15%",
@@ -78,6 +84,7 @@ const offers = [
     price: "1.530.000đ",
   },
   {
+    slug: "villa-bt02",
     title: "Villa nghỉ dưỡng 3N2Đ",
     image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80",
     badge: "-35%",
@@ -90,6 +97,7 @@ const offers = [
     price: "6.490.000đ",
   },
   {
+    slug: "combo-gia-dinh-3n2d",
     title: "Combo gia đình 3N2Đ",
     image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
     badge: "-20%",
@@ -102,6 +110,7 @@ const offers = [
     price: "4.990.000đ",
   },
   {
+    slug: "combo-nhom-ban-2n1d",
     title: "Combo nhóm bạn 2N1Đ",
     image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
     badge: "-25%",
@@ -114,6 +123,7 @@ const offers = [
     price: "2.690.000đ",
   },
   {
+    slug: "combo-spa-wellness",
     title: "Combo Spa & Wellness",
     image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
     badge: "-10%",
@@ -258,12 +268,15 @@ export default function OfferPage() {
                     <p className="text-sm text-muted-foreground/70 line-through">{offer.oldPrice}</p>
                     <p className="mt-1 text-lg font-extrabold text-primary">{offer.price}</p>
                   </div>
-                  <button className="flex h-10 items-center justify-center rounded-xl border border-border px-4 text-sm font-semibold text-primary transition hover:bg-secondary">
+                  <Link
+                    href={routes.roomDetail(offer.slug)}
+                    className="flex h-10 items-center justify-center rounded-xl border border-border px-4 text-sm font-semibold text-primary transition hover:bg-secondary"
+                  >
                     <span className="inline-flex items-center gap-1">
                       Xem chi tiết
                       <ChevronRight className="size-4" />
                     </span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </article>

@@ -87,30 +87,35 @@ const categories = [
 
 const popularPosts = [
   {
+    slug: "dia-diem-check-in-hai-tien",
     title: "Top 10 địa điểm check-in đẹp nhất Hải Tiến 2024",
     date: "08/05/2024",
     views: "2.5k lượt xem",
     image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=500&q=80",
   },
   {
+    slug: "an-gi-o-hai-tien",
     title: "Ăn gì ở Hải Tiến? Top 10 món ngon không thể bỏ lỡ",
     date: "10/05/2024",
     views: "2.1k lượt xem",
     image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80",
   },
   {
+    slug: "dat-phong-flamingo-gia-tot",
     title: "Kinh nghiệm đặt phòng Flamingo Hải Tiến giá tốt nhất",
     date: "05/05/2024",
     views: "1.8k lượt xem",
     image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=500&q=80",
   },
   {
+    slug: "thoi-diem-di-hai-tien",
     title: "Nên đi Hải Tiến vào thời điểm nào đẹp nhất?",
     date: "02/05/2024",
     views: "1.6k lượt xem",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80",
   },
   {
+    slug: "cho-hai-san-hai-tien",
     title: "Chợ hải sản Hải Tiến - Thiên đường hải sản tươi ngon",
     date: "30/04/2024",
     views: "1.2k lượt xem",
@@ -265,7 +270,11 @@ export default function BlogPage() {
               <h3 className="text-lg font-bold tracking-tight text-foreground">Bài viết được xem nhiều</h3>
               <div className="mt-4 space-y-3">
                 {popularPosts.map((post, index) => (
-                  <article key={post.title} className="flex gap-3">
+                  <Link
+                    key={post.slug}
+                    href={routes.blogDetail(post.slug)}
+                    className="flex gap-3 rounded-lg p-1 transition-colors hover:bg-secondary/70"
+                  >
                     <div className="relative h-[64px] w-[86px] shrink-0 overflow-hidden rounded-md border border-border">
                       <Image
                         src={post.image}
@@ -285,7 +294,7 @@ export default function BlogPage() {
                       <p className="mt-1 text-xs text-muted-foreground">{post.date}</p>
                       <p className="mt-0.5 text-xs text-muted-foreground">{post.views}</p>
                     </div>
-                  </article>
+                  </Link>
                 ))}
               </div>
             </div>

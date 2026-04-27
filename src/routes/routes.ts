@@ -5,6 +5,7 @@ export const routes = {
   roomDetail: (slug: string) => `/rooms/${slug}`,
   offers: "/offer",
   blog: "/blog",
+  blogDetail: (slug: string) => `/blog/${slug}`,
   contact: "/contact",
 
   // Auth pages
